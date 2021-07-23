@@ -25,7 +25,7 @@ function _drawBoxTODO(){
   document.getElementById('taskBox').innerHTML = template
 }
 
-export default class todosController {
+export default class TodosController {
 
   constructor(){
     ProxyState.on('todos', _drawBoxTODO)
