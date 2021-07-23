@@ -22,5 +22,37 @@ input[type=checkbox]:checked {
   }
 }
 
+.action{
+  cursor: pointer;
+}
+
+.question {
+  &.hover{
+    .answer{
+      opacity: 1;
+    }
+  }
+  .answer{
+    opacity: 0;
+    transition: all
+  }
+}
+
+  body.debug .container,
+  body.debug .container-fluid {
+    outline: 2px double blue;
+    outline-offset: -2px;
+  }
+
+  body.debug .row {
+    outline: 2px dashed red;
+    outline-offset: -2px;
+  }
+
+  body.debug [class*="col-"] {
+    outline: 2px dotted forestgreen;
+    outline-offset: -3px;
+  }
+
 
 

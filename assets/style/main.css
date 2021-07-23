@@ -10695,4 +10695,40 @@ main {
   flex-grow: 1;
 }
 
+input[type=checkbox]:checked.label.strikethrough {
+  text-decoration: line-through;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.question.hover .answer {
+  opacity: 1;
+}
+.question .answer {
+  opacity: 0;
+  transition: all;
+}
+
+body.debug .container,
+body.debug .container-fluid,
+body.debug .container-sm,
+body.debug .container-md,
+body.debug .container-lg,
+body.debug .container-xl {
+  outline: 2px double blue;
+  outline-offset: -2px;
+}
+
+body.debug .row {
+  outline: 2px dashed red;
+  outline-offset: -2px;
+}
+
+body.debug [class*=col-] {
+  outline: 2px dotted forestgreen;
+  outline-offset: -3px;
+}
+
 /*# sourceMappingURL=main.css.map */
