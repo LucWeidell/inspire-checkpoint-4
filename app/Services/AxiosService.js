@@ -37,7 +37,7 @@ export const sandApiImages = axios.create({
  */
 
 
-export const sandApiTodo = axios.create({
-  baseURL: '',
+export const sandApiTodos = axios.create({
+  baseURL: 'https://bcw-sandbox.herokuapp.com/api/LucWeidell/todos',
   timeout: 5000
 })

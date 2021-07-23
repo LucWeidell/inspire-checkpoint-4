@@ -16,14 +16,17 @@ export default class Todo {
   get Template() {
     return /*html*/`
     <div class="col-md-12 d-flex justify-content-between">
-      <div class="form-group form-check" onchange="app.todosController.flipSelect('${this.completed}')" >
-        <input type="checkbox" class="form-check-input" id="testCheck" ${this.completed ? 'checked' : ''}>
-        <label class="form-check-label" for="testCheck">'${this.description}'</label>
+      <div class="form-group form-check" onchange="app.todosController.flipSelect('${this.id}')" >
+        <input type="checkbox" class="form-check-input" id="checked" ${this.completed ? 'checked' : ''}>
+        <label class="form-check-label" for="checked">'${this.description}'</label>
       </div>
-      <span class="action" onclick="app.todosController.deleteTask('${this.id}')">X</span>
+      <span class="action" onclick="app.todosController.deleteTodo('${this.id}')">X</span>
     </div>
     `
+  }
 
+  flipSelect(){
+    this.completed = !this.completed
   }
 
 }
