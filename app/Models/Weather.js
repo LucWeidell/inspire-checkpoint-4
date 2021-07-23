@@ -7,12 +7,29 @@ export default class Weather {
     this.city = name
     this.country = sys.country
     this.fahrenheit = true
-    // TODO could ad icon here
+    // REVIEW could ad icon here
   }
 
+  //REVIEW could have icon before  temp
   get Template(){
     return `
+      <h5>${this.fahrenheit ? this.Fahrenheit : this.Celsius}°</h5>
+      <p>${this.city}, ${this.country}</p>
+      <button type="button" class="btn btn-info" onclick="app.weathersController.changeDegreeType()">Metric/Imperial</button>
     `
+  }
+
+  get Celsius(){
+    return Math.round(this.temp - 272.15) + ''
+  }
+
+  get Fahrenheit(){
+    return Math.round(((this.temp - 273.15)*1.8)+32) + ''
+  }
+
+
+  flipDegree(){
+    this.fahrenheit = !this.fahrenheit
   }
 }
 

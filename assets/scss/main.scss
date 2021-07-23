@@ -15,10 +15,10 @@ main {
   flex-grow: 1;
 }
 
-//NOTE if the input TODO is checked
+//NOTE if the input TODO is checked: strike the label
 input[type=checkbox]:checked {
   &.label.strikethrough{
-  text-decoration: line-through;
+    text-decoration: line-through;
   }
 }
 
