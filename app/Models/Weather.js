@@ -2,8 +2,8 @@
 
 export default class Weather {
 
-  constructor({weather, name, sys}){
-    this.temp = weather.temp;
+  constructor({main, name, sys}){
+    this.temp = main.temp;
     this.city = name
     this.country = sys.country
     this.fahrenheit = true
@@ -13,7 +13,7 @@ export default class Weather {
   //REVIEW could have icon before  temp
   get Template(){
     return `
-      <h5>${this.fahrenheit ? this.Fahrenheit : this.Celsius}°</h5>
+      <h5>${this.fahrenheit ? this.Fahrenheit+'°F' : this.Celsius+'°C'}</h5>
       <p>${this.city}, ${this.country}</p>
       <button type="button" class="btn btn-info" onclick="app.weathersController.changeDegreeType()">Metric/Imperial</button>
     `

@@ -15,20 +15,33 @@
 <body>
     <!-- NOTE header with title and weather -->
     <header>
-        <div class="row text-light text-shadow justify-content-end">
-            <div class="col">
-                <h5 class="text-shadow ml-2">Inspire</h5>
+        <div class="row text-light shadower justify-content-end">
+            <div class="col pl-4 mt-3">
+                <h5 class=" ml-2">Inspire</h5>
             </div>
-            <div class="col" id="weather">
-
+            <div class="col text-right pr-4 mt-3" id="weather">
             </div>
         </div>
     </header>
+    <!-- NOTE clock and tasks -->
     <main class="container">
+        <div class="row">
+            <div class="col align-items-baseline " id ="clock">
+            </div>
+            <div class="row justify-content-end" id ="taskBox">
+            </div>
+        </div>
 
     </main>
-    <!-- NOTE footer here -->
-    <footer class="text-light">
+    <!-- NOTE footer: image author, quote here -->
+    <footer class="row text-light shadower justify-content-center">
+        <div class="col-md-3" id ="bg-auth">
+        </div>
+        <div class="col-md-6" id="quotes">
+        </div>
+        <div class="col-md-3">
+            <h5>Todos</h5>
+        </div>
     </footer>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script>

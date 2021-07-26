@@ -4,7 +4,7 @@ async function _draw(){
   try{
   const res = await sandApiImages.get()
   document.body.style.backgroundImage = `url('${res.data.largeImgUrl}')`
-  //document.getElementById('bg-auth').innerText = res.data.author
+  document.getElementById('bg-auth').innerText = 'Photographer: ' + res.data.author
   } catch (error){
     console.log('Er: getting bg-img', error)
   }

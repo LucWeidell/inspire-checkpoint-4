@@ -39,6 +39,10 @@ input[type=checkbox]:checked {
   }
 }
 
+.shadower {
+  text-shadow: 0px 1px black;
+}
+
   body.debug .container,
   body.debug .container-fluid {
     outline: 2px double blue;
@@ -54,6 +58,7 @@ input[type=checkbox]:checked {
     outline: 2px dotted forestgreen;
     outline-offset: -3px;
   }
+
 
 
 
