@@ -1,4 +1,4 @@
-import { sandApiQuotes } from "../Services/AxiosService"
+import { sandApiQuotes } from "../Services/AxiosService.js"
 
 async function _draw(){
   try {
@@ -6,9 +6,9 @@ async function _draw(){
     console.log('quote return response,', res.data)
     let template = /*html*/ `
     <div class="text-center mt-5">
-      <h4>${res.data.content}</h4>
+      <h4>"${res.data.content}"</h4>
       <div class="answer">
-        <p>${this.res.data.author}</p>
+        <p>${res.data.author}</p>
       </div>
     </div>
     `
