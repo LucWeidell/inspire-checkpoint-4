@@ -24,14 +24,13 @@ class TodosService {
   }
 
   async deleteTodo(id) {
-    debugger
     let removeTodo = ProxyState.todos.find(t=> t.id == id)
     console.log('To do to remove', removeTodo)
 
     const res = await sandApiTodos.delete('/'+removeTodo.id)
     console.log('responce: removing to do:', res.data)
-    //FIXME at re trigger proxy state: confirm responce is good
-    //ProxyState.todos = ProxyState.todos.filter(t=> t.id != id)
+    //confirmed at re trigger proxy state: confirm responce is good
+    ProxyState.todos = ProxyState.todos.filter(t=> t.id != id)
   }
 
   async flipSelect(id){
@@ -39,7 +38,7 @@ class TodosService {
     flipTodo.flipSelect()
     const res = await sandApiTodos.put('/' + flipTodo.id, flipTodo)
     console.log('flipped checked status', res.data)
-    //FIXME at re trigger proxy state: confirm responce is good// confirmed
+    //confirmed at re trigger proxy state: confirm responce is good// confirmed
     ProxyState.todos = ProxyState.todos
   }
 }

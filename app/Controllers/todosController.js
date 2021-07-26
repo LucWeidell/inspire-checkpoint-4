@@ -72,7 +72,7 @@ export default class TodosController {
 
   async deleteTodo(id) {
     try {
-      await todosService.getAllTodos(id)
+      await todosService.deleteTodo(id)
     } catch (error) {
       console.log('Er: Getting todo from Sand,', error)
     }
