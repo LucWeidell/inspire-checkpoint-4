@@ -47,6 +47,10 @@ input[type=checkbox]:checked {
   text-shadow: 0px 1px black;
 }
 
+.task-box {
+  background-color: rgba(55, 118, 236, 0.582);
+}
+
   body.debug .container,
   body.debug .container-fluid {
     outline: 2px double blue;

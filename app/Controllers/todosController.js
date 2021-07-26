@@ -9,18 +9,28 @@ function _drawBoxTODO(){
   template += /*html*/ `
   <div class="col-md-4 shadow-lg mt-3 mx-2 ">
     <div class="row">
-      <div class="col-md-12 text-center bg-blue">
+      <div class="col-md-12 text-center task-box">
         <h4>To Do: Get on it!</h4>
         <p>${finTodo} / ${allTodo.length}</p>
-     <div class="row bg-white" id ="tasks">
-     ${allTodo.length==0 ? 'No tasks' : allTodo.forEach(t => t.Template)}
-     </div>
-     <div class="col d-flex justify-content-center mt-1 p-0 mx-0">
-       <form class= "d-flex" onsubmit="app.todosController.addTodo()">
-         <input required type="text" name="todoDesc" placeholder="Add Task ...." minlength="3" maxlength="50">
-         <button type="submit" class="btn btn-outline-success">+</button>
-       </form>
-     </div>
+      </div>
+    </div>
+    <div class="row bg-white" id ="tasks">`
+     if(allTodo.length==0){
+     template += 'No tasks'
+    } else {
+      allTodo.forEach(t => template += t.Template)
+    }
+    template += /*html*/ `
+    </div>
+    <div class ="row bg-white">
+      <div class="col d-flex justify-content-center mt-1 p-0 mx-0">
+        <form class= "d-flex" onsubmit="app.todosController.addTodo()">
+          <input required type="text" name="" id="todoDesc" placeholder="Add Task ...." minlength="3" maxlength="50">
+          <button type="submit" class="btn btn-outline-success">+</button>
+        </form>
+      </div>
+    </div>
+  </div>
   `
   document.getElementById('taskBox').innerHTML = template
 }
@@ -45,18 +55,34 @@ export default class TodosController {
 
   async addTodo(){
     try {
+      debugger
       event.preventDefault()
       let todo = event.target
       console.log('event to add', todo)
-      // FIXME look at this again
       let rawTodo = {
-        description: todo.name.value
+        description: todo.todoDesc.value
       }
       await todosService.addTodo(rawTodo);
       todo.reset()
 
     } catch (error) {
       console.log('Er: Adding todo to Sand,', error)
+    }
+  }
+
+  async deleteTodo(id) {
+    try {
+      await todosService.getAllTodos(id)
+    } catch (error) {
+      console.log('Er: Getting todo from Sand,', error)
+    }
+  }
+
+  async flipSelect(id) {
+    try {
+      await todosService.flipSelect(id)
+    } catch (error) {
+      console.log('Er: Flipping completed task status (id, error),', id, error)
     }
   }
 }

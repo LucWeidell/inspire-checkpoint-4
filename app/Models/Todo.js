@@ -1,12 +1,12 @@
 
 export default class Todo {
 
-  constructor({id, completed, user, description}){
+  constructor({_id, id, completed, user, description}){
     // NOTE Our adder code gives this
     this.description = description;
 
     // NOTE read form server
-    this.id = id;
+    this.id = _id || id;
     this.completed = completed;
     this.user = user;
   }
@@ -14,7 +14,7 @@ export default class Todo {
   //Only need on template and changes on the if completed:
     //All will have delete button: in line ternary
   get Template() {
-    return /*html*/`
+    return /*html*/ `
     <div class="col-md-12 d-flex justify-content-between">
       <div class="form-group form-check" onchange="app.todosController.flipSelect('${this.id}')" >
         <input type="checkbox" class="form-check-input" id="checked" ${this.completed ? 'checked' : ''}>
