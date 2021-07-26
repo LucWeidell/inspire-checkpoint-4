@@ -18,6 +18,7 @@ function _updateClock12(){
 export default class ClocksController{
 
   constructor(){
+    _updateClock12()
     this.clock = setInterval(_updateClock12, 60000)
   }
 
