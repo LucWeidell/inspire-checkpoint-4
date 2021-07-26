@@ -7,13 +7,13 @@ function _drawBoxTODO(){
   let finTodo = allTodo.filter(t => t.completed).length
   let template = ''
   template += /*html*/ `
-  <div class="col-md-3 shadow-lg mt-3 mx-2 ">
+  <div class="col-md-4 shadow-lg mt-3 mx-2 ">
     <div class="row">
-      <div class="col-md-12 text-center ${this.color}">
+      <div class="col-md-12 text-center bg-blue">
         <h4>To Do: Get on it!</h4>
         <p>${finTodo} / ${allTodo.length}</p>
      <div class="row bg-white" id ="tasks">
-     ${allTodo.forEach(t => t.Template)}
+     ${allTodo.length==0 ? 'No tasks' : allTodo.forEach(t => t.Template)}
      </div>
      <div class="col d-flex justify-content-center mt-1 p-0 mx-0">
        <form class= "d-flex" onsubmit="app.todosController.addTodo()">
@@ -32,6 +32,7 @@ export default class TodosController {
 
 
     this.getAllTodos()
+    _drawBoxTODO()
   }
 
   async getAllTodos() {
