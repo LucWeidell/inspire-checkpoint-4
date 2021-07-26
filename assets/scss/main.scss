@@ -16,26 +16,26 @@ main {
   flex-grow: 1;
 }
 
-//NOTE if the input TODO is checked: strike the label
-input[type=checkbox]:checked {
-  &.label.strikethrough{
-    text-decoration: line-through;
-  }
-}
+//NOTE if the input TODO is checked: strike the label: didnt work as intended
+// input[type=checkbox]:checked {
+//   &.label.strikethrough{
+//     text-decoration: line-through;
+//   }
+// }
 
 .action{
   cursor: pointer;
 }
 
 .question {
-  &.hover{
+  &:hover{
     .answer{
       opacity: 1;
     }
   }
   .answer{
     opacity: 0;
-    transition: all
+    transition: all .3s linear;
   }
 }
 
@@ -44,7 +44,7 @@ input[type=checkbox]:checked {
 }
 
 .shadower {
-  text-shadow: 0px 1px black;
+  text-shadow: 0px 1px 2px black;
 }
 
 .task-box {

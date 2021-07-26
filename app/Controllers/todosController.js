@@ -55,7 +55,6 @@ export default class TodosController {
 
   async addTodo(){
     try {
-      debugger
       event.preventDefault()
       let todo = event.target
       console.log('event to add', todo)

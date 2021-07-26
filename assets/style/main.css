@@ -10696,20 +10696,16 @@ main {
   flex-grow: 1;
 }
 
-input[type=checkbox]:checked.label.strikethrough {
-  text-decoration: line-through;
-}
-
 .action {
   cursor: pointer;
 }
 
-.question.hover .answer {
+.question:hover .answer {
   opacity: 1;
 }
 .question .answer {
   opacity: 0;
-  transition: all;
+  transition: all 0.3s linear;
 }
 
 .clock-row {
@@ -10717,7 +10713,7 @@ input[type=checkbox]:checked.label.strikethrough {
 }
 
 .shadower {
-  text-shadow: 0px 1px black;
+  text-shadow: 0px 1px 2px black;
 }
 
 .task-box {
