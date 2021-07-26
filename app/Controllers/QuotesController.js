@@ -5,7 +5,7 @@ async function _draw(){
     const res = await sandApiQuotes.get()
     console.log('quote return response,', res.data)
     let template = /*html*/ `
-    <div class="text-center mt-5">
+    <div class="question">
       <h4>"${res.data.content}"</h4>
       <div class="answer">
         <p>${res.data.author}</p>

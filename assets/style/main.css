@@ -10724,6 +10724,10 @@ input[type=checkbox]:checked.label.strikethrough {
   background-color: rgba(55, 118, 236, 0.582);
 }
 
+.tasks {
+  background-color: rgba(255, 255, 255, 0.589);
+}
+
 body.debug .container,
 body.debug .container-fluid,
 body.debug .container-sm,

@@ -14,18 +14,18 @@ function _drawBoxTODO(){
         <p>${finTodo} / ${allTodo.length}</p>
       </div>
     </div>
-    <div class="row bg-white" id ="tasks">`
+    <div class="row tasks" id ="tasks">`
      if(allTodo.length==0){
-     template += 'No tasks'
+     template += `<p class="ml-2">No tasks</p>`
     } else {
       allTodo.forEach(t => template += t.Template)
     }
     template += /*html*/ `
     </div>
-    <div class ="row bg-white">
+    <div class ="row tasks">
       <div class="col d-flex justify-content-center mt-1 p-0 mx-0">
         <form class= "d-flex" onsubmit="app.todosController.addTodo()">
-          <input required type="text" name="" id="todoDesc" placeholder="Add Task ...." minlength="3" maxlength="50">
+          <input required class= "tasks" type="text" name="" id="todoDesc" placeholder="Add Task ...." minlength="3" maxlength="50">
           <button type="submit" class="btn btn-outline-success">+</button>
         </form>
       </div>

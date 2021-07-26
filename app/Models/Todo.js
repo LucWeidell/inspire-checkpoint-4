@@ -15,7 +15,7 @@ export default class Todo {
     //All will have delete button: in line ternary
   get Template() {
     return /*html*/ `
-    <div class="col-md-12 d-flex justify-content-between">
+    <div class="col-md-12 d-flex justify-content-between tasks">
       <div class="form-group form-check" onchange="app.todosController.flipSelect('${this.id}')" >
         <input type="checkbox" class="form-check-input" id="checked" ${this.completed ? 'checked' : ''}>
         <label class="form-check-label" for="checked">'${this.description}'</label>
